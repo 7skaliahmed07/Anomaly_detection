@@ -1,0 +1,100 @@
+# Anomaly Detection in Financial Transactions
+
+# Overview
+
+This project demonstrates anomaly detection in a dataset of financial transactions using machine learning. The dataset contains 1,000 synthetic transactions with features like transaction amount, volume, frequency, customer demographics, and more. Anomalies (e.g., potential fraud) are detected using the Isolation Forest algorithm from scikit-learn.
+
+Key steps include:
+- Data exploration and visualization (e.g., histograms using Plotly).
+- Simple rule-based anomaly detection (transactions > 3 standard deviations from the mean).
+- Training an Isolation Forest model on relevant features.
+- Model evaluation using classification metrics.
+- Interactive prediction for new transactions via user input.
+
+The project is implemented in a Jupyter Notebook (`Anomaly_detection.ipynb`).
+
+# Dataset
+
+- **Source**: Synthetic data in `transaction_anomalies_dataset.csv` (not included; generate or download a similar dataset for replication).
+- **Features**:
+  - Transaction_ID
+  - Transaction_Amount
+  - Transaction_Volume
+  - Average_Transaction_Amount
+  - Frequency_of_Transactions
+  - Time_Since_Last_Transaction
+  - Day_of_Week
+  - Time_of_Day
+  - Age
+  - Gender
+  - Income
+  - Account_Type
+- **Target**: `Is_Anomaly` (binary label added during processing; 2% anomaly ratio assumed).
+- **Size**: 1,000 rows.
+
+# Installation
+
+1. Clone the repository:
+   ```
+   git clone <repository-url>
+   cd <repository-folder>
+   ```
+
+2. Create a virtual environment (optional but recommended):
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+
+4. Launch Jupyter Notebook:
+   ```
+   jupyter notebook
+   ```
+   Open `Anomaly_detection.ipynb` in your browser.
+
+# Usage
+
+1. Run the notebook cells sequentially.
+2. Explore data summaries, visualizations, and anomaly detection.
+3. Train the model and evaluate performance.
+4. In the final cell, input values for `Transaction_Amount`, `Average_Transaction_Amount`, and `Frequency_of_Transactions` to predict if a new transaction is anomalous.
+
+Example input and output:
+- Transaction_Amount: 10000
+- Average_Transaction_Amount: 900
+- Frequency_of_Transactions: 6
+- Output: "Anomaly detected: This transaction is flagged as an anomaly."
+
+# Model Details
+
+- **Algorithm**: Isolation Forest (unsupervised anomaly detection).
+- **Features Used**: Transaction_Amount, Average_Transaction_Amount, Frequency_of_Transactions.
+- **Hyperparameters**: Contamination=0.02 (expected anomaly proportion), random_state=42.
+- **Evaluation**: Precision, recall, F1-score (typically ~1.00 on test set due to synthetic data).
+- **Training Split**: 80/20 train/test.
+
+# Results
+
+- The model achieves high accuracy in identifying anomalies.
+- Visualizations show transaction amount distributions and anomaly scatter plots.
+- Rule-based detection flags ~2% of transactions as anomalies.
+
+# Requirements
+
+See `requirements.txt` for dependencies.
+
+
+# Acknowledgments
+
+- Built with scikit-learn, Pandas, NumPy, and Plotly.
+- Inspired by fraud detection use cases in finance.
+
+---
+# By
+
+- Ahmed 
