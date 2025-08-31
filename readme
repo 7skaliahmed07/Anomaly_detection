@@ -15,8 +15,8 @@ The project is implemented in a Jupyter Notebook (`Anomaly_detection.ipynb`).
 
 # Dataset
 
-- **Source**: Synthetic data in `transaction_anomalies_dataset.csv` (not included; generate or download a similar dataset for replication).
-- **Features**:
+- Source: Synthetic data in `transaction_anomalies_dataset.csv` (not included; generate or download a similar dataset for replication).
+- Features:
   - Transaction_ID
   - Transaction_Amount
   - Transaction_Volume
@@ -29,8 +29,8 @@ The project is implemented in a Jupyter Notebook (`Anomaly_detection.ipynb`).
   - Gender
   - Income
   - Account_Type
-- **Target**: `Is_Anomaly` (binary label added during processing; 2% anomaly ratio assumed).
-- **Size**: 1,000 rows.
+- Target: `Is_Anomaly` (binary label added during processing; 2% anomaly ratio assumed).
+- Size: 1,000 rows.
 
 # Installation
 
@@ -72,11 +72,11 @@ Example input and output:
 
 # Model Details
 
-- **Algorithm**: Isolation Forest (unsupervised anomaly detection).
-- **Features Used**: Transaction_Amount, Average_Transaction_Amount, Frequency_of_Transactions.
-- **Hyperparameters**: Contamination=0.02 (expected anomaly proportion), random_state=42.
-- **Evaluation**: Precision, recall, F1-score (typically ~1.00 on test set due to synthetic data).
-- **Training Split**: 80/20 train/test.
+- Algorithm: Isolation Forest (unsupervised anomaly detection).
+- Features Used: Transaction_Amount, Average_Transaction_Amount, Frequency_of_Transactions.
+- Hyperparameters: Contamination=0.02 (expected anomaly proportion), random_state=42.
+- Evaluation: Precision, recall, F1-score (typically ~1.00 on test set due to synthetic data).
+- Training Split: 80/20 train/test.
 
 # Results
 
